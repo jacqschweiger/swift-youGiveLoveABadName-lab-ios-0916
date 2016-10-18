@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,8 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bonjovi" translatesAutoresizingMaskIntoConstraints="NO" id="2mK-Ph-zer">
-                                <frame key="frameInset" minY="201" width="375" height="266"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bonjovi" translatesAutoresizingMaskIntoConstraints="NO" id="2mK-Ph-zer">
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="NtP-TN-1Xb" appends="YES" id="nUg-7S-qE9"/>
@@ -28,10 +28,27 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="2mK-Ph-zer" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FIO-nY-tn3"/>
+                            <constraint firstItem="2mK-Ph-zer" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NFc-GX-gC7"/>
+                            <constraint firstItem="2mK-Ph-zer" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="2/5" id="OGH-eH-133"/>
                             <constraint firstItem="2mK-Ph-zer" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OXr-i6-1XI"/>
                             <constraint firstAttribute="trailing" secondItem="2mK-Ph-zer" secondAttribute="trailing" id="Qvz-md-aKo"/>
+                            <constraint firstItem="2mK-Ph-zer" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1.2" id="bCj-MT-kKh"/>
+                            <constraint firstItem="2mK-Ph-zer" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/5" id="gdx-n6-8y3"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bCj-MT-kKh"/>
+                                <exclude reference="gdx-n6-8y3"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="bigHeightConstraint" destination="bCj-MT-kKh" id="qED-Fa-KQX"/>
+                        <outlet property="bonjoviImage" destination="2mK-Ph-zer" id="280-S6-AF2"/>
+                        <outlet property="smallHeightConstraint" destination="gdx-n6-8y3" id="zd7-LB-jD5"/>
+                        <outlet property="startingHeightConstraint" destination="OGH-eH-133" id="Wjl-C7-6db"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="NtP-TN-1Xb">
